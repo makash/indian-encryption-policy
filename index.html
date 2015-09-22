@@ -1,33 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Indian-encryption-policy by makash</title>
+    <meta name="description" content="Indian-encryption-policy : Thoughts on the draft National Encryption Policy  ">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Indian-encryption-policy</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Indian-encryption-policy</h1>
-        <p>Thoughts on the draft National Encryption Policy  </p>
 
-        <p class="view"><a href="https://github.com/makash/indian-encryption-policy">View the Project on GitHub <small>makash/indian-encryption-policy</small></a></p>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/makash/indian-encryption-policy">View on GitHub</a>
 
+          <h1 id="project_title">Indian-encryption-policy</h1>
+          <h2 id="project_tagline">Thoughts on the draft National Encryption Policy  </h2>
 
-        <ul>
-          <li><a href="https://github.com/makash/indian-encryption-policy/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/makash/indian-encryption-policy/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/makash/indian-encryption-policy">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/makash/indian-encryption-policy/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/makash/indian-encryption-policy/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h2>
 <a id="draft-national-encryption-policy" class="anchor" href="#draft-national-encryption-policy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Draft National Encryption Policy</h2>
 
@@ -39,10 +42,51 @@
 <p>Everyone has time till the 16th of October to reply to the draft and share their opinions with DeitY. You can email your comments/feedback/objections etc. to <a href="mailto:akrishnan@deity.gov.in">akrishnan@deity.gov.in</a>. </p>
 </blockquote>
 
-<h3>
-<a id="what-is-encryption-and-why-should-we-care" class="anchor" href="#what-is-encryption-and-why-should-we-care" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is encryption and why should we care?</h3>
+<h2>
+<a id="what-is-encryption-and-decryption" class="anchor" href="#what-is-encryption-and-decryption" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is encryption and decryption?</h2>
 
-<p>TBD</p>
+<p>Encryption is simply a way to store information in such a way(algorithms) that only authorised users(someone who has the key) can read it. </p>
+
+<p><code>Plain text</code> which can be read by anyone just by looking at it is converted to <code>cipher text</code> using an encryption algorithm. This generated <code>cipher text</code> can become <code>plain text</code> if the <code>key</code> used to encrypt is used to decrypt.</p>
+
+<h2>
+<a id="why-should-you-care" class="anchor" href="#why-should-you-care" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why should you care?</h2>
+
+<p>The draft encryption policy dictates different things for different kinds of users. In this article we will focus on Consumers(C) and Businesses(B). The exchange of data between them can be listed as follows</p>
+
+<p>| Type of Users | Example Application | Encryption Requirement |
+| ------------- | ----------- | | ----------- |
+| B2B      | Sharing a contract | Contract may be digitally signed |
+| B2C     | Online Shopping | Password information, confidential comms  |
+| C2B | Provide Payment information | Credit card number, CVV | 
+| C2C | Whatsapp | Sending messages to each other individually or in groups |</p>
+
+<h2>
+<a id="data-at-rest-and-data-in-motion" class="anchor" href="#data-at-rest-and-data-in-motion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data at Rest and Data in Motion</h2>
+
+<p>Data or information needs to be protected when it is stored(rest) and not doing anything and it also needs to be protected when it is travelling(motion). </p>
+
+<h3>
+<a id="how-does-one-protect-data" class="anchor" href="#how-does-one-protect-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>How does one protect data?</h3>
+
+<p>Data is of use when it is accurate, easily available and doesn't become bad over time. Data that we think is <em>sensitive</em> needs to be hidden from others as well. Depending on the type of sensitivity, we might want to share somethings with our friends, colleagues, family, doctor or maybe the government (fingerprints maybe). </p>
+
+<p>So if the data is in your computer/smart phone/server and it is in plain text there is no way for you to be sure that someone else hasn't had a peek at it. If they did, you would have no way of knowing as your data is still accurate, available to you and worth something. </p>
+
+<p>The only way one can be absoutely sure that our data is not visible to anyone who we don't want to share it with is by <em>encrypting</em> it and storing the key safely. This is similar to storing your cash and valuables in a safe and making sure only you know the combination to open that safe. </p>
+
+<p><code>Key management</code> is an important albiet a complex problem to solve. If the cipher text will be decrypted by the same key, then that key needs to shared in advance in a safe manner with all those who should be able to see the data. If the cipher text can be encrypted with one key of a pair and decrypted with another, then the decryption key can be shared easily. </p>
+
+<h3>
+<a id="what-does-the-draft-policy-say-about-this" class="anchor" href="#what-does-the-draft-policy-say-about-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>What does the draft policy say about this?</h3>
+
+<p>The draft policy wants to forego commonly known wisdom and knowledge about secure ways of doing this and wants </p>
+
+<h3>
+<a id="what-does-the-draft-policy-say-about-this-1" class="anchor" href="#what-does-the-draft-policy-say-about-this-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>What does the draft policy say about this</h3>
+
+<h3>
+<a id="why-is-this-a-problem" class="anchor" href="#why-is-this-a-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why is this a problem</h3>
 
 <h3>
 <a id="what-doesnt-work" class="anchor" href="#what-doesnt-work" aria-hidden="true"><span class="octicon octicon-link"></span></a>What doesn't work</h3>
@@ -67,12 +111,17 @@
 
 <p>You can chat with me on <a href="https://twitter.com/makash">twitter</a></p>
       </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/makash">makash</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Indian-encryption-policy maintained by <a href="https://github.com/makash">makash</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+
     
+
   </body>
 </html>
